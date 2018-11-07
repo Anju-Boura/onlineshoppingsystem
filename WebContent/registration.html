@@ -1,0 +1,131 @@
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Login and Registration Form </title>
+		<link rel="stylesheet" type="text/css" href="style_reg.css"/>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+function validationform(){
+	
+	
+	var password=document.getElementById("passwordsignup").value;
+	var password_confirm=document.getElementById("passwordsignup_confirm").value;
+	var number=document.getElementById("mobile").value;
+	
+	if(password!=password_confirm){
+		
+		alert("password does not match");
+		return false;
+		
+		
+	}
+	else if(isNaN(number)){  
+	
+	
+	       //document.getElementById("mobilespan").innerHTML="value should be numeric";
+	       alert("the mobile no should be numeric");
+		  return false;  
+		}
+	else if(number.length!=10){
+		alert("the mobile number should be of 10 digit");
+		return false;
+		
+	}
+	else{
+		
+	return true;
+	}
+}
+</script>
+    </head>
+    <body>
+        <div class="container">
+           
+            <header>
+                <h1>Login or Register here </h1>
+				
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <form  action="Login" autocomplete="on" method="post"> 
+                                <h1>Log in</h1> 
+                                <p> 
+                                    <label for="username" class="uname" > Your email  </label>
+                                    <input id="username" name="email_log" required="required" type="text" placeholder=" mymail@mail.com"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd"> Your password </label>
+                                    <input id="password" name="password_log" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p > 
+									<input type="submit"  value="LOGIN" STYLE="FONT-STYLE:bold; font-size:20px;"/> 
+									
+								</p>
+                                
+                                
+								
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">SIGN UP</a>
+								</p>
+
+                            </form>
+                        </div>
+
+                        <div id="register" class="animate form">
+                            <form  action="Register" autocomplete="on"  onsubmit="return(validationform());" method="post"> 
+                                <h1> SIGN UP </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" >name</label>
+                                    <input id="usernamesignup" name="name" required="required" type="text" placeholder="eg. anjuboura" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail"  > email</label>
+                                    <input id="emailsignup" name="email" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" > password </label>
+                                    <input id="passwordsignup" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" >Please confirm your password </label>
+                                    <input id="passwordsignup_confirm" name="password_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                </p>
+								<p> 
+                                    <label for="mobile" class="mobile" >Mobile number</label>
+                                    <input id ="mobile" name="mobileno" required="required" type="text" placeholder="numbers" /><span id="mobilespan"></span>
+                                </p>
+								<p> 
+                                    <label for="addresssignup" >address</label>
+                                    <textarea name="address" required="required" placeholder="address" style="width :390px; height :50px;"></textarea>
+                                </p>
+                                <p class="signin button"> 
+									<input type="submit" value="Sign up"/> 
+								</p>
+                                <p class="change_link">  
+									Already a member ?
+									<a href="#tologin" class="to_register<P style="FONT-SIZE:30PX;"> Go and log in</P> </a>
+								</p>
+                            </form>
+                        </div>
+						
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>
